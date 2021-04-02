@@ -29,7 +29,7 @@ export class ProduitListComponent implements OnInit {
    category: any;
    public page = 1;
   public pageSize =3;
- itemSize:number=0;
+ public itemSize =0;
 
   constructor(private produitService: ProduitService,
     private router: Router) { }

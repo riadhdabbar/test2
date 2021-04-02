@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Pipe } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,12 +10,12 @@ import { ProduitDetailComponent } from './components/produit-detail/produit-deta
 import { ProduitListComponent } from './components/produit-list/produit-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { JwPaginationComponent } from 'jw-angular-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { Ng2OrderModule } from 'ng2-order-pipe';
 import { FilterpricePipe } from './components/filter/filterprice.pipe';
 import { FiltercategoriePipe } from './components/filter/filtercategorie.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { RouterOutlet, Router } from '@angular/router';
 
 
 
@@ -28,6 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
     FilterpricePipe,
     FiltercategoriePipe,
+
     
     
     

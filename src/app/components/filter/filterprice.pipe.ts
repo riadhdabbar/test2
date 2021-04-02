@@ -11,7 +11,7 @@ export class FilterpricePipe implements PipeTransform {
       return value
                    }
     return value.filter(function(searchByPrice){
-     return searchByPrice.price.toLowerCase().indexOf(searchTerm) > -1
+     return searchByPrice.price >= (searchTerm) 
 
     })
   }

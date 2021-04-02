@@ -79,9 +79,9 @@
 		 
 		    <div class="col-lg-4 col-md-6 mb-4"   *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize | filter:nameSearch |  filterprice:priceSearch |  filtercategorie:categorieSearch; let i = index  " 
           [class.active]="i == currentIndex"
-          (click)="setActiveTutorial(tutorial, i)"  >
+          (click)="setActiveTutorial(product, i)"  >
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="{{ tutorial.imageUrl }}" alt=""></a>
+              <a href="#"><img class="card-img-top" src="{{ product.imageUrl }}" alt=""></a>
                         <div  class="card-body" >
                             <h4 class="card-title">
 
@@ -94,11 +94,7 @@
                             <p class="card-text">price :{{ product.price }}</p>
                             <p class="card-text">category :{{ product.category }}</p>
 
-                            <p class="card-text"     
-                            *ngFor="let group of product.reviews">
-                           
-                           aaa {{product.reviews.length}}
-                            averageScore:  {{ group.value / product.reviews.length }} </p>
+                         
                           
                     
 
@@ -122,7 +118,7 @@
         <ngb-pagination
         [(page)]="page"
         [pageSize]="pageSize"
-        [collectionSize]="itemSize"></ngb-pagination>
+        [collectionSize]="products.length"></ngb-pagination>
       </div>
       <!-- /.col-lg-9 -->
 

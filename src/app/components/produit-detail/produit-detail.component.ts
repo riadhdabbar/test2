@@ -14,20 +14,20 @@ export class ProduitDetailComponent implements OnInit {
 
   
   id?: any;
-  product?: Product;
+  produit?: Product;
 
   constructor(private route: ActivatedRoute,private router: Router,
     private employeeService: ProduitService) { }
 
   ngOnInit() {
-    this.product = new Product();
+    this.produit = new Product();
 
     this.id = this.route.snapshot.params['id'];
     
     this.employeeService.get(this.id)
       .subscribe(data => {
         console.log(data)
-        this.product = data;
+        this.produit = data;
       }, error => console.log(error));
   }
 
