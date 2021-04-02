@@ -54,22 +54,22 @@
       </div>
       <!-- /.col-lg-3 -->
 
-      <div *ngIf="product" class="col-lg-9"  >
+      <div *ngIf="produit" class="col-lg-9"  >
 
         <div class="card mt-4">
           <img class="card-img-top img-fluid" src="http://placeimg.com/640/480/technics?ts=799" alt="">
           <div class="card-body">
             <h3 class="card-title"></h3>
-            <h4>product name :{{ product.productName }}</h4>
-            <h4>price: {{ product.price }}</h4>
+            <h4>product name :{{ produit.productName }}</h4>
+            <h4>price: {{ produit.price }}</h4>
             <h4>description :</h4>
-            <p class="card-text">{{product.description}}</p>
+            <p class="card-text">{{produit.description}}</p>
             <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
           </div>
         </div>
         <!-- /.card -->
 
-        <div class="card card-outline-secondary my-4" *ngFor="let group of product.reviews">
+        <div class="card card-outline-secondary my-4" *ngFor="let group of produit.reviews">
           <div class="card-header">
           </div>
           <div class="card-body">
