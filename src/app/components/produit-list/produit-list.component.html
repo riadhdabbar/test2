@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Shop Homepage - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <!-- Custom styles for this template -->
+  <link href="/src/styles/css/shop-homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+      
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4">Search</h1>
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="search" placeholder="Search by name"  [(ngModel)]="nameSearch">
+                   
+            <input type="text" class="form-control" id="searchByPrice" placeholder="Search by Price"  [(ngModel)]="priceSearch">
+                </div>
+
+                <select class="form-control" id="searchByCategories" [(ngModel)]="categorieSearch" name="categorieSearch" >
+                  <option >Awesome</option>
+                  <option >Fantastic</option>
+
+               </select>
+        <div class="list-group">
+    
+      
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+     
+
+        <div class="row">
+
+        
+         
+		 
+		    <div class="col-lg-4 col-md-6 mb-4"   *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize | filter:nameSearch |  filterprice:priceSearch |  filtercategorie:categorieSearch; let i = index  " 
+          [class.active]="i == currentIndex"
+          (click)="setActiveTutorial(tutorial, i)"  >
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{{ tutorial.imageUrl }}" alt=""></a>
+                        <div  class="card-body" >
+                            <h4 class="card-title">
+
+                                
+                            <a href="#">  </a>
+
+                            </h4>
+                            <h5> productName: {{ product.productName }}</h5>
+                            <p class="card-text">productName: {{ product.productName }}</p>
+                            <p class="card-text">price :{{ product.price }}</p>
+                            <p class="card-text">category :{{ product.category }}</p>
+
+                            <p class="card-text"     
+                            *ngFor="let group of product.reviews">
+                           
+                           aaa {{product.reviews.length}}
+                            averageScore:  {{ group.value / product.reviews.length }} </p>
+                          
+                    
+
+                            
+            <button (click)="employeeDetails(product.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+
+           
+                        </div>
+
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+            </div>
+          
+          </div>
+          
+		 
+          
+        </div>
+        <!-- /.row -->
+        <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="itemSize"></ngb-pagination>
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
